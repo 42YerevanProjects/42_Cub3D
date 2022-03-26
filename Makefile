@@ -6,13 +6,13 @@
 #    By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 15:20:34 by shovsepy          #+#    #+#              #
-#    Updated: 2022/03/22 15:33:46 by shovsepy         ###   ########.fr        #
+#    Updated: 2022/03/26 17:45:21 by shovsepy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3d
 
-SRCS = $(wildcard *.c)
+SRCS = $(wildcard src/*.c)
 
 OBJS = $(SRCS:.c=.o)
 

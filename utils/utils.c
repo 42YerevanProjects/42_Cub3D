@@ -5,7 +5,7 @@ int	f_open(char *file)
 	int	fd;
 
 	fd = open(file, O_RDONLY);
-	if (fd = -1)
+	if (fd == -1)
 		ft_exit(3);
 	return (fd);
 }

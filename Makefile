@@ -12,7 +12,7 @@
 
 NAME = cub3d
 
-SRCS = $(wildcard src/*.c)
+SRCS = $(wildcard src/*.c utils/*.c)
 
 OBJS = $(SRCS:.c=.o)
 

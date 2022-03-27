@@ -17,6 +17,7 @@ void	parse(char	*file)
 				init_map_size(fd);
 				create_map();
 			}
+			//TODO: parse line
 			n++;
 		}
 	}

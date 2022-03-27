@@ -12,7 +12,11 @@ void	parse(char	*file)
 	{
 		if (!is_empty(line))
 		{
-			// TODO:  create map
+			if (n == 5)
+			{
+				init_map_size(fd);
+				create_map();
+			}
 			n++;
 		}
 	}

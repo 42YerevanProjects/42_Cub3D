@@ -88,4 +88,14 @@ typedef	struct	s_vars
 	int		hit;
 }				t_vars;
 
+/* UTILS */
+int	get_next_line(int fd, char **line);
+int	ft_exit(int code);
+int	ft_strlen(char *str);
+int	is_valid(char *file);
+int	is_empty(char *line);
+int	f_open(char *file);
+
+/* PARSING */
+void	parse(char *file);
 #endif

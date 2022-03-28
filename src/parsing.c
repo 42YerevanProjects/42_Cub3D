@@ -14,7 +14,7 @@ void	parse(char	*file)
 		{
 			if (n == 5)
 			{
-				init_map_size(fd);
+				init_map_size(file);
 				create_map();
 			}
 			//TODO: parse line

@@ -99,6 +99,6 @@ int		f_open(char *file);
 /* PARSING */
 void	parse(char *file);
 void	create_map(void);
-void	init_map_size(int fd);
+void	init_map_size(char *file);
 
 #endif

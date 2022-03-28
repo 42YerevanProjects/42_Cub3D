@@ -15,14 +15,16 @@ static void	process_line(char *line, int *n, int flag)
 	}
 }
 
-void	init_map_size(int fd)
+void	init_map_size(char *file)
 {
 	int		n;
+	int		fd;
 	int		flag;
 	char	*line;
 
 	n = 0;
 	flag = 0;
+	fd = f_open(file);
 	while (get_next_line(fd, &line))
 	{
 		if (!is_empty(line))
@@ -34,6 +36,7 @@ void	init_map_size(int fd)
 	if (map.gnl)
 		map.height++;
 	free(line);
+	close(fd);
 }
 
 void	create_map(void)

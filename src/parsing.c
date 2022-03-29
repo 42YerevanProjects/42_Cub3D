@@ -57,4 +57,5 @@ void	parse(char	*file)
 			n++;
 		}
 	}
+	//TODO: continue reading and parsing map
 }

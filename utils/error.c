@@ -12,5 +12,9 @@ void	ft_exit(int code)
 		printf("Error: The input file contains an invalid map!\n");
 	else if (code == 5)
 		printf("Error: Memory allocation is failed!\n");
+	else if (code == 6)
+		printf("Error: Invalid element format!\n");
+	else if (code == 7)
+		printf("Error: Invalid RGB format!\n");
 	exit(code);
 }

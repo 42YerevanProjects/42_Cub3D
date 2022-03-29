@@ -30,3 +30,22 @@ int	is_empty(char *str)
 	}
 	return (1);
 }
+
+int	get_count(char const *s, char c)
+{
+	int	cnt;
+
+	cnt = 0;
+	while (*s != '\0')
+	{
+		if (*s == c)
+			cnt++;
+		s++;
+	}
+	return (cnt);
+}
+
+int	my_rgb(int r, int g, int b)
+{
+	return (r << 16 | g << 8 | b);
+}

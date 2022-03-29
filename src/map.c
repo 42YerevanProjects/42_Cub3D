@@ -55,3 +55,18 @@ void	create_map(void)
 		i++;
 	}
 }
+
+void	fill_map(char *line, int n)
+{
+	int	i;
+
+	i = -1;
+	while (line[++i] != '\0')
+		map.map[n][i] = line[i];
+	while (i < map.width)
+	{
+		map.map[n][i] = ' ';
+		i++;
+	}
+	map.map[n][i] = '\0';
+}

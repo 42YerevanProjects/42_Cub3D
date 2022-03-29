@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
+/*   Updated: 2022/03/29 07:31:13 by shovsepy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CUB3D_H
 # define CUB3D_H
 
@@ -62,7 +74,7 @@ struct	s_win
 	int		s_width;	
 }		win;
 
-typedef	struct	s_vars
+typedef struct s_vars
 {
 	double	camera_x;
 	double	ray_dir_x;
@@ -94,7 +106,7 @@ int		ft_atoi(const char *str);
 char	*ft_strdup(char *str);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, int start, int len);
-int		get_count(char const *, char c);
+int		get_count(char const *s, char c);
 void	ft_exit(int code);
 int		ft_strlen(char *str);
 char	**free_matrix(char **s);

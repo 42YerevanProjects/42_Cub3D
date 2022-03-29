@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/29 07:34:11 by shovsepy          #+#    #+#             */
+/*   Updated: 2022/03/29 07:34:19 by shovsepy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 int	ft_strlen(char *str)
@@ -81,7 +93,7 @@ char	*ft_strdup(char *str)
 	return (ptr);
 }
 
-char	*ft_substr(char const *s, int  start, int len)
+char	*ft_substr(char const *s, int start, int len)
 {
 	int		idx;
 	char	*modified_s;

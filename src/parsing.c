@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parsing.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/29 07:36:50 by shovsepy          #+#    #+#             */
+/*   Updated: 2022/03/29 07:36:53 by shovsepy         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 int	parse_elements(char *line)
@@ -18,7 +30,7 @@ int	parse_elements(char *line)
 	return (0);
 }
 
-int		parse_line(char *line, int n)
+int	parse_line(char *line, int n)
 {
 	if (n >= 0 && n <= 5)
 	{
@@ -33,7 +45,6 @@ int		parse_line(char *line, int n)
 	}
 	return (1);
 }
-
 
 void	parse(char	*file)
 {

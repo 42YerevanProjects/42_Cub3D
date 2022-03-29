@@ -90,15 +90,25 @@ typedef	struct	s_vars
 
 /* UTILS */
 int		get_next_line(int fd, char **line);
+int		ft_atoi(const char *str);
+char	*ft_strdup(char *str);
+char	**ft_split(char const *s, char c);
+char	*ft_substr(char const *s, int start, int len);
+int		get_count(char const *, char c);
 void	ft_exit(int code);
 int		ft_strlen(char *str);
+char	**free_matrix(char **s);
 int		is_valid(char *file);
 int		is_empty(char *line);
 int		f_open(char *file);
+int		my_rgb(int r, int g, int b);
 
 /* PARSING */
 void	parse(char *file);
 void	create_map(void);
 void	init_map_size(char *file);
+int		parse_colors(char **temp);
+int		parse_elements(char *line);
+void	fill_map(char *line, int n);
 
 #endif

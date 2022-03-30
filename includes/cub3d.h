@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/30 13:00:07 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/30 14:42:57 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,14 @@ typedef void		t_mlx_window;
 #  define KEY_S 1
 #  define KEY_A 0
 #  define KEY_D 2
+#  define FULL_OPACITY 0
 # elif __linux__
 #  define KEY_ESC 65307
 #  define KEY_W 119
 #  define KEY_S 115
 #  define KEY_A 97
 #  define KEY_D 100
+#  define FULL_OPACITY 255
 # else
 #  error "Unknown compiler"
 # endif
@@ -191,11 +193,11 @@ struct				s_win
 {
 	t_mlx			*mlx;
 	t_mlx_window	*win;
-	t_data			*data;
-	t_data			*north;
-	t_data			*south;
-	t_data			*west;
-	t_data			*east;
+	t_data			data;
+	t_data			north;
+	t_data			south;
+	t_data			west;
+	t_data			east;
 	double			time;
 	double			old_time;
 	int				height;
@@ -251,8 +253,16 @@ int					parse_colors(char **temp);
 int					parse_elements(char *line);
 void				fill_map(char *line, int n);
 
+/* EVENTS */
 int					on_close(void);
 int					on_key_press(int keycode);
 int					on_key_release(int keycode);
+int					on_loop(void);
+
+t_color				rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a);
+void				pixel(t_vector pos, t_color c);
+void				line(t_vector pos1, t_vector pos2, t_color c);
+void				rect(t_rect rect, t_color c);
+void				do_sync(void);
 
 #endif

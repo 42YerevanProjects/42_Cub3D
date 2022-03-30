@@ -3,45 +3,48 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 15:20:34 by shovsepy          #+#    #+#              #
-#    Updated: 2022/03/26 17:45:21 by shovsepy         ###   ########.fr        #
+#    Updated: 2022/03/29 22:53:34 by aabajyan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = cub3d
+CC = gcc
+SRCS = $(wildcard utils/*.c src/*.c)
+OBJS = $(SRCS:%.c=%.o)
+CFLAGS = -Wall -Wextra -Werror -g
+LDFLAGS = $(CFLAGS) -lmlx
+UNAME = $(shell uname -s)
 
-SRCS = $(wildcard src/*.c utils/*.c)
+ifeq ($(UNAME), Linux)
+	CFLAGS  += -I/usr/X11/include
+	LDFLAGS += -L/usr/X11/lib -lXext -lX11
+endif
 
-OBJS = $(SRCS:.c=.o)
+ifeq ($(UNAME), Darwin)
+	CFLAGS += -Imlx
+	LDFLAGS	+= -Lmlx -framework OpenGL -framework AppKit
+endif
 
-CC = cc
+obj/%.o: src/%.c
+	$(CC) $(CFLAGS) -c $^ -o $@
 
-INCLUDES = -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit
-
-FLAGS = -Wall -Wextra -Werror
-
-RM = rm -rf
-
-.c.o:
-	$(CC) $(FLAGS)  -Imlx -c $< -o $(<:.c=.o)
+$(NAME): $(OBJS)
+	$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@$(MAKE) -C ./mlx
-	@$(CC) $(OBJS) $(FLAGS) $(INCLUDES) -o $(NAME)
-
 clean:
-	@$(RM) $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	rm -f $(NAME)
+
+re: fclean all
 
 norm:
 	@norminette $(SRCS)
 
-re: fclean all
-
-.PHONY: all clean fclean norm re
+.PHONY: clean re fclean all norm

@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/30 23:55:58 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 00:03:28 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,6 +264,8 @@ int					on_close(void);
 int					on_key_press(int keycode);
 int					on_key_release(int keycode);
 int					on_loop(void);
+
+void				player_move(void);
 
 t_color				rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a);
 t_color				rgb(t_u8 r, t_u8 g, t_u8 b);

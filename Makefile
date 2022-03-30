@@ -6,7 +6,7 @@
 #    By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 15:20:34 by shovsepy          #+#    #+#              #
-#    Updated: 2022/03/29 22:53:34 by aabajyan         ###   ########.fr        #
+#    Updated: 2022/03/30 12:38:30 by aabajyan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = cub3d
 CC = gcc
 SRCS = $(wildcard utils/*.c src/*.c)
 OBJS = $(SRCS:%.c=%.o)
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -O0 -Iincludes
 LDFLAGS = $(CFLAGS) -lmlx
 UNAME = $(shell uname -s)
 

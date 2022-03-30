@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:38:38 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/30 23:23:14 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/30 23:56:24 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	on_key_release(int keycode)
 
 int	on_loop(void)
 {
-	rect((t_rect){0, 0, 500, 500}, rgba(255, 0, 0, FULL_OPACITY));
+	draw_rect(rect(0, 0, 500, 500), rgb(255, 0, 0));
 	do_sync();
 	return (0);
 }

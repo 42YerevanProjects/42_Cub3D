@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/30 23:50:01 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/30 23:55:58 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,9 +266,13 @@ int					on_key_release(int keycode);
 int					on_loop(void);
 
 t_color				rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a);
-void				pixel(int x, int y, t_color c);
-void				line(t_vector pos1, t_vector pos2, t_color c);
-void				rect(t_rect rect, t_color c);
+t_color				rgb(t_u8 r, t_u8 g, t_u8 b);
+t_vector			vector(int x, int y);
+t_fvector			fvector(float x, float y);
+t_rect				rect(int x, int y, int w, int h);
+void				draw_pixel(int x, int y, t_color c);
+void				draw_line(t_vector pos1, t_vector pos2, t_color c);
+void				draw_rect(t_rect rect, t_color c);
 void				do_sync(void);
 
 #endif

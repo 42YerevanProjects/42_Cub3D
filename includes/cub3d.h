@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/30 14:42:57 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/30 23:50:01 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,12 @@ typedef struct s_vector
 	int				y;
 }					t_vector;
 
+typedef struct s_fvector
+{
+	double			x;
+	double			y;
+}					t_fvector;
+
 struct				s_map
 {
 	char			**map;
@@ -260,7 +266,7 @@ int					on_key_release(int keycode);
 int					on_loop(void);
 
 t_color				rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a);
-void				pixel(t_vector pos, t_color c);
+void				pixel(int x, int y, t_color c);
 void				line(t_vector pos1, t_vector pos2, t_color c);
 void				rect(t_rect rect, t_color c);
 void				do_sync(void);

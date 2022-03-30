@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 13:59:25 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/30 14:42:21 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/30 23:50:27 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,41 @@ t_color	rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a)
 	return (a << 24 | r << 16 | g << 8 | b);
 }
 
-void	pixel(t_vector pos, t_color c)
+void	pixel(int x, int y, t_color c)
 {
 	char			*dest;
 	unsigned int	ppos;
 
-	if (pos.x < 0 || pos.y < 0 || pos.x >= win.height || pos.y >= win.height)
+	if (x < 0 || y < 0 || x >= win.height || y >= win.height)
 		return ;
-	ppos = pos.y * win.data.length;
-	ppos += pos.x * (win.data.bpp / 8);
+	ppos = y * win.data.length;
+	ppos += x * (win.data.bpp / 8);
 	dest = win.data.addr + ppos;
 	*(t_u32 *)dest = c;
 }
 
 void	line(t_vector pos1, t_vector pos2, t_color c)
 {
-	t_vector	dpos;
-	t_vector	pos;
+	t_vector	d;
+	t_fvector	inc;
+	int			steps;
+	t_fvector	pos;
+	int			i;
 
-	dpos = (t_vector){pos2.x - pos1.x, pos2.y - pos1.y};
-	pos = (t_vector){pos1.x, 0};
-	while (pos.x <= pos2.x)
+	d = (t_vector){pos2.x - pos1.x, pos2.y - pos1.y};
+	if (abs(d.x) > abs(d.y))
+		steps = abs(d.x);
+	else
+		steps = abs(d.y);
+	inc = (t_fvector){d.x / (float)steps, d.y / (float)steps};
+	pos = (t_fvector){pos1.x, pos1.y};
+	i = 0;
+	while (i <= steps)
 	{
-		pos.y = pos1.y + dpos.y * (pos.x - pos1.x) / dpos.x;
-		pixel(pos, c);
-		++pos.x;
+		pixel((int)round(pos.x), (int)round(pos.y), c);
+		pos.x += inc.x;
+		pos.y += inc.y;
+		i++;
 	}
 }
 

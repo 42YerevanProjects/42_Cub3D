@@ -6,7 +6,7 @@
 #    By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 15:20:34 by shovsepy          #+#    #+#              #
-#    Updated: 2022/03/30 12:38:30 by aabajyan         ###   ########.fr        #
+#    Updated: 2022/03/30 23:50:39 by aabajyan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = gcc
 SRCS = $(wildcard utils/*.c src/*.c)
 OBJS = $(SRCS:%.c=%.o)
 CFLAGS = -Wall -Wextra -Werror -g -O0 -Iincludes
-LDFLAGS = $(CFLAGS) -lmlx
+LDFLAGS = $(CFLAGS) -lmlx -lm
 UNAME = $(shell uname -s)
 
 ifeq ($(UNAME), Linux)

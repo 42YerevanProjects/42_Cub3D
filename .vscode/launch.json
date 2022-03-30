@@ -1,0 +1,19 @@
+{
+  "version": "0.1.0",
+  "configurations": [
+    {
+      "name": "GDB: Debug Project",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/cub3d",
+      "args": ["test.cub"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "preLaunchTask": "Makefile: Build Project",
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ]
+}

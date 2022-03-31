@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:32:52 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/29 07:33:02 by shovsepy         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:08:49 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_exit(int code)
 		printf("Error: Invalid element format!\n");
 	else if (code == 7)
 		printf("Error: Invalid RGB format!\n");
-	else if (code ==8)
+	else if (code == 8)
 		printf("Error: Failed to close the file!\n");
 	exit(code);
 }

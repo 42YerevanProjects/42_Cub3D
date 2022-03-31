@@ -82,3 +82,22 @@ void	fill_map(char *line, int n)
 	}
 	map.map[n][i] = '\0';
 }
+
+int		parse_map(void)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < map.height)
+	{
+		if (i == 0 || i == map.height -1)
+			check_zero(map.map[i]);
+		j = -1;
+		while (map.map[i][++j])
+			parse_cell(i, j);
+	}
+	if (player.count == 0)
+		ft_exit(4);
+	return (0);
+}

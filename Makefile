@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME = cub3d
-CC = gcc
+CC = cc
 SRCS = $(wildcard utils/*.c src/*.c)
 OBJS = $(SRCS:%.c=%.o)
 CFLAGS = -Wall -Wextra -Werror -g -O0 -Iincludes
@@ -37,10 +37,10 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	@rm -f $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 

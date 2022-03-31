@@ -28,5 +28,7 @@ void	ft_exit(int code)
 		printf("Error: Invalid element format!\n");
 	else if (code == 7)
 		printf("Error: Invalid RGB format!\n");
+	else if (code ==8)
+		printf("Error: Failed to close the file!\n");
 	exit(code);
 }

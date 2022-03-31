@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:36:05 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/29 07:36:06 by shovsepy         ###   ########.fr       */
+/*   Updated: 2022/03/31 20:08:48 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	fill_map(char *line, int n)
 	map.map[n][i] = '\0';
 }
 
-int		parse_map(void)
+int	parse_map(void)
 {
 	int	i;
 	int	j;
@@ -91,7 +91,7 @@ int		parse_map(void)
 	i = -1;
 	while (++i < map.height)
 	{
-		if (i == 0 || i == map.height -1)
+		if (i == 0 || i == map.height - 1)
 			check_zero(map.map[i]);
 		j = -1;
 		while (map.map[i][++j])

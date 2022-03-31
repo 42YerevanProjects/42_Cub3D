@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/31 17:13:41 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 19:25:36 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,9 @@ typedef void		t_mlx_window;
 # define MOVE_UP 4U
 # define MOVE_DOWN 8U
 
-# define ROT_SPEED 0.063
-# define FRAMES 0.012
-# define SPEED 0.069
-# define WIDTH 512
+# define ROT_SPEED 0.033
+# define SPEED 0.039
+# define WIDTH 1024
 # define HEIGHT 512
 
 # define E_KEY_PRESS 2
@@ -270,9 +269,10 @@ int					parse_map(void);
 int					on_close(void);
 int					on_key_press(int keycode);
 int					on_key_release(int keycode);
-int					on_loop(void);
+int					on_loop(t_vars *vars);
 
 void				player_move(void);
+void				raycaster(t_vars *vars);
 
 t_color				rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a);
 t_color				rgb(t_u8 r, t_u8 g, t_u8 b);

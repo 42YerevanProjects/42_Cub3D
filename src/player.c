@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 00:03:07 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/31 17:36:38 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 20:07:55 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	player_rotate(void)
 	}
 }
 
+// FIXME: Prevent getting out of the map if needed.
 void	player_move(void)
 {
 	if ((player.move & MOVE_UP) != 0)

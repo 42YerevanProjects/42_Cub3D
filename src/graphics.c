@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 13:59:25 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/30 23:56:14 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 18:25:03 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	draw_pixel(int x, int y, t_color c)
 	char			*dest;
 	unsigned int	ppos;
 
-	if (x < 0 || y < 0 || x >= win.height || y >= win.height)
+	if (x < 0 || y < 0 || x >= WIDTH || y >= HEIGHT)
 		return ;
 	ppos = y * win.data.length;
 	ppos += x * (win.data.bpp / 8);

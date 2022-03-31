@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:38:38 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/31 17:43:57 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:57:46 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,14 @@ int	on_key_release(int keycode)
 	return (0);
 }
 
-int	on_loop(void)
+int	on_loop(t_vars *vars)
 {
 	int	y;
 	int	x;
 
 	player_move();
 	draw_rect(rect(0, 0, win.width, win.height), rgb(0, 0, 0));
+	raycaster(vars);
 	y = 0;
 	while (y < map.height)
 	{

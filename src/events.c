@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:38:38 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/31 17:57:46 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 20:14:42 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ int	on_loop(t_vars *vars)
 
 	player_move();
 	draw_rect(rect(0, 0, win.width, win.height), rgb(0, 0, 0));
+	draw_rect(rect(0, 0, WIDTH, HEIGHT / 2), map.ceiling);
+	draw_rect(rect(0, HEIGHT / 2, WIDTH, HEIGHT / 2), map.floor);
 	raycaster(vars);
 	y = 0;
 	while (y < map.height)

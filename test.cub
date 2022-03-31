@@ -1,4 +1,4 @@
-C 110,110,110      
+C 60,60,60      
 SO ./textures/south.xpm
 
     NO ./textures/north.xpm
@@ -6,7 +6,7 @@ SO ./textures/south.xpm
 EA ./textures/east.xpm
 
 
-F 10,10,10
+F 110,110,110
 
 WE ./textures/west.xpm
 

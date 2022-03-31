@@ -16,6 +16,8 @@ int	main(int argc, char **argv)
 {
 	win.height = 1100;
 	win.width = 1280;
+	player.plane_y = -0.71;
+	player.dir_x = 1;
 	if (argc != 2)
 		ft_exit(1);
 	if (!is_valid(argv[1]))

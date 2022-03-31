@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:38:38 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/31 00:04:52 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:43:57 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	on_key_press(int keycode)
 		player.move |= PLAYER_UP;
 	else if (keycode == KEY_DOWN || keycode == KEY_S)
 		player.move |= PLAYER_DOWN;
-	printf("press: %d\n", player.move);
 	return (0);
 }
 
@@ -47,7 +46,6 @@ int	on_key_release(int keycode)
 		player.move &= ~PLAYER_UP;
 	else if (keycode == KEY_DOWN || keycode == KEY_S)
 		player.move &= ~PLAYER_DOWN;
-	printf("press: %d\n", player.move);
 	return (0);
 }
 
@@ -65,12 +63,12 @@ int	on_loop(void)
 		while (x < map.width)
 		{
 			if (map.map[y][x] == '1')
-				draw_rect(rect(x * 32, y * 32, 32, 32), rgb(100, 100, 100));
+				draw_rect(rect(x * 5, y * 5, 5, 5), rgb(100, 100, 100));
 			++x;
 		}
 		++y;
 	}
-	draw_rect(rect(player.x, player.y, 16, 16), rgb(255, 255, 0));
+	draw_rect(rect(player.x * 5, player.y * 5, 3, 3), rgb(255, 255, 0));
 	do_sync();
 	return (0);
 }

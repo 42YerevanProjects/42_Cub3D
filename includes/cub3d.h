@@ -6,16 +6,16 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/31 00:03:28 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:13:41 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
+# include <../mlx/mlx.h>
 # include <fcntl.h>
 # include <math.h>
-# include <../mlx/mlx.h>
 # include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -63,7 +63,9 @@ typedef void		t_mlx_window;
 # define MOVE_UP 4U
 # define MOVE_DOWN 8U
 
-# define SPEED 4
+# define ROT_SPEED 0.063
+# define FRAMES 0.012
+# define SPEED 0.069
 # define WIDTH 512
 # define HEIGHT 512
 

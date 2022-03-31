@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shovsepy <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:36:50 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/29 07:36:53 by shovsepy         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:14:38 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,6 @@ void	parse_cell(int i, int j)
 		check_neighbours(i, j);
 }
 
-
-
 void	process_map(char *line, int n, int fd)
 {
 	if (map.gnl)
@@ -87,7 +85,7 @@ void	process_map(char *line, int n, int fd)
 	free(line);
 }
 
-void	parse(char	*file)
+void	parse(char *file)
 {
 	int		n;
 	int		fd;

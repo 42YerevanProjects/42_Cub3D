@@ -15,7 +15,7 @@
 
 # include <fcntl.h>
 # include <math.h>
-# include <mlx.h>
+# include <../mlx/mlx.h>
 # include <stdint.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -250,6 +250,9 @@ int					is_valid(char *file);
 int					is_empty(char *line);
 int					f_open(char *file);
 int					my_rgb(int r, int g, int b);
+void				check_zero(char *line);
+void				check_validity(char c);
+void				check_neighbours(int i, int j);
 
 /* PARSING */
 void				parse(char *file);
@@ -258,6 +261,8 @@ void				init_map_size(char *file);
 int					parse_colors(char **temp);
 int					parse_elements(char *line);
 void				fill_map(char *line, int n);
+void				parse_cell(int i, int j);
+int					parse_map(void);
 
 /* EVENTS */
 int					on_close(void);

@@ -26,8 +26,8 @@ void	check_zero(char *line)
 
 void	check_validity(char c)
 {
-	if (!(c != ' ' && c != '1' && c != '0' && c != 'N' && c != 'W'
-			&& c != 'E' && c != 'S'))
+	if (c != ' ' && c != '1' && c != '0' && c != 'N' && c != 'W'
+			&& c != 'E' && c != 'S')
 		ft_exit(4);
 }
 

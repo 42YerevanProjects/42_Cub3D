@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 12:09:22 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/04/01 15:25:02 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 17:28:52 by shovsepy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ static void	raycaster_draw_lines(int x, t_vars *vars)
 	else if (vars->side == 1 && vars->ray_dir_y < 0)
 		vars->tex_x = 64 - vars->tex_x - 1;
 	vars->step = 64.0 / vars->line_height;
-	vars->tex_pos = (vars->draw_start - 100 - HEIGHT / 2 + vars->line_height
+	vars->tex_pos = (vars->draw_start - HEIGHT / 2 + vars->line_height
 			/ 2) * vars->step;
 	draw_texture(win.east_pixels, x, vars);
 }

@@ -106,6 +106,8 @@ void	parse(char *file)
 				ft_exit(4);
 			n++;
 		}
+		if (line)
+			free(line);
 	}
 	process_map(line, n, fd);
 }

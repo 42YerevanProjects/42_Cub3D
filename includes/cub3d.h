@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/04/01 19:57:07 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 20:20:49 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,6 +201,11 @@ typedef struct s_data
 	int				endian;
 }					t_data;
 
+# define DIRECTION_NORTH 0
+# define DIRECTION_SOUTH 1
+# define DIRECTION_WEST 2
+# define DIRECTION_EAST 3
+
 struct				s_win
 {
 	t_mlx			*mlx;
@@ -222,6 +227,9 @@ struct				s_win
 
 typedef struct s_vars
 {
+	int				direction;
+	int				horizontal;
+	int				vertical;
 	double			camera_x;
 	double			ray_dir_x;
 	double			ray_dir_y;

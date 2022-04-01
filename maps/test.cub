@@ -1,14 +1,14 @@
 C 60,60,60      
-SO ./textures/brick.xpm
+SO ./textures/S.xpm
 
-    NO ./textures/brick.xpm
+    NO ./textures/N.xpm
 
-EA ./textures/brick.xpm
+EA ./textures/E.xpm
 
 
 F 110,110,110
 
-WE ./textures/brick.xpm
+WE ./textures/W.xpm
 
         1111111111111111111111111
         1000000000110000000000001

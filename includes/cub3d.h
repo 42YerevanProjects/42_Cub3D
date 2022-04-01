@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/04/01 14:34:55 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 19:57:07 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,25 +35,32 @@ typedef uint32_t	t_color;
 typedef void		t_mlx;
 typedef void		t_mlx_window;
 
-# define KEY_RIGHT 65363
-# define KEY_LEFT 65361
-# define KEY_UP 65362
-# define KEY_DOWN 65364
-
 # if __APPLE__
 #  define KEY_ESC 53
 #  define KEY_W 13
 #  define KEY_S 1
 #  define KEY_A 0
 #  define KEY_D 2
+#  define KEY_RIGHT 124
+#  define KEY_LEFT 123
+#  define KEY_UP 126
+#  define KEY_DOWN 125
 #  define FULL_OPACITY 0
+#  define ROT_SPEED 0.063
+#  define SPEED 0.069
 # elif __linux__
 #  define KEY_ESC 65307
 #  define KEY_W 119
 #  define KEY_S 115
 #  define KEY_A 97
 #  define KEY_D 100
+#  define KEY_RIGHT 65363
+#  define KEY_LEFT 65361
+#  define KEY_UP 65362
+#  define KEY_DOWN 65364
 #  define FULL_OPACITY 255
+#  define ROT_SPEED 0.033
+#  define SPEED 0.039
 # else
 #  error "Unknown compiler"
 # endif
@@ -63,8 +70,6 @@ typedef void		t_mlx_window;
 # define MOVE_UP 4U
 # define MOVE_DOWN 8U
 
-# define ROT_SPEED 0.033
-# define SPEED 0.039
 # define WIDTH 1024
 # define HEIGHT 512
 

@@ -6,7 +6,7 @@
 #    By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 15:20:34 by shovsepy          #+#    #+#              #
-#    Updated: 2022/03/30 23:50:39 by aabajyan         ###   ########.fr        #
+#    Updated: 2022/04/01 17:33:31 by shovsepy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ obj/%.o: src/%.c
 	$(CC) $(CFLAGS) -c $^ -o $@
 
 $(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
+	@$(CC) $(OBJS) -o $(NAME) $(LDFLAGS)
 
 all: $(NAME)
 

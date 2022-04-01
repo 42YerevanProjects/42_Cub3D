@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/01 14:03:55 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/04/01 15:21:42 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 19:58:02 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,12 @@ void	texture_load(char *path, t_data *dest)
 {
 	int	width;
 	int	height;
+	int	fd;
 
+	fd = open(path, O_RDONLY);
+	if (fd == -1)
+		ft_exit(4);
+	close(fd);
 	dest->img = mlx_xpm_file_to_image(win.mlx, path, &width, &height);
 	dest->addr = mlx_get_data_addr(dest->img, &dest->bpp, &dest->length,
 			&dest->endian);

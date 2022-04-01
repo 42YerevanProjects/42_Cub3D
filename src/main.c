@@ -6,11 +6,23 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:35:27 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/31 19:36:53 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:21:38 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
+
+static void	load_textures(void)
+{
+	texture_load(map.fd_ea, &win.east);
+	texture_load(map.fd_so, &win.south);
+	texture_load(map.fd_no, &win.north);
+	texture_load(map.fd_we, &win.west);
+	texture_to_array(&win.east, win.east_pixels);
+	texture_to_array(&win.west, win.west_pixels);
+	texture_to_array(&win.south, win.south_pixels);
+	texture_to_array(&win.north, win.north_pixels);
+}
 
 int	main(int argc, char **argv)
 {
@@ -32,6 +44,7 @@ int	main(int argc, char **argv)
 	win.data.addr = mlx_get_data_addr(
 			win.data.img, &win.data.bpp, &win.data.length, &win.data.endian);
 	player.move = 0;
+	load_textures();
 	mlx_loop_hook(win.mlx, on_loop, &vars);
 	mlx_hook(win.win, E_DESTROY_NOTIFY, 0, on_close, NULL);
 	mlx_hook(win.win, E_KEY_PRESS, M_KEY_PRESS, on_key_press, NULL);

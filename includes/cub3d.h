@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/31 19:25:36 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:34:55 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,10 @@ struct				s_win
 	t_data			south;
 	t_data			west;
 	t_data			east;
+	t_color			north_pixels[64][64];
+	t_color			south_pixels[64][64];
+	t_color			west_pixels[64][64];
+	t_color			east_pixels[64][64];
 	double			time;
 	double			old_time;
 	int				height;
@@ -280,8 +284,12 @@ t_vector			vector(int x, int y);
 t_fvector			fvector(float x, float y);
 t_rect				rect(int x, int y, int w, int h);
 void				draw_pixel(int x, int y, t_color c);
+t_color				get_pixel(t_data *dest, int x, int y);
 void				draw_line(t_vector pos1, t_vector pos2, t_color c);
 void				draw_rect(t_rect rect, t_color c);
+void				texture_load(char *path, t_data *dest);
+void				texture_to_array(t_data *src, t_color target[64][64]);
+void				draw_texture(t_color t[64][64], int x, t_vars *vars);
 void				do_sync(void);
 
 #endif

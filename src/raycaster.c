@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 12:09:22 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/31 20:09:29 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 15:25:02 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,6 @@ static void	raycaster_dda(t_vars *vars)
 
 static void	raycaster_draw_lines(int x, t_vars *vars)
 {
-	t_color	color;
-
 	if (vars->side == 0)
 		vars->perp_wall_dist = vars->side_dist_x - vars->delta_dist_x;
 	else
@@ -93,10 +91,20 @@ static void	raycaster_draw_lines(int x, t_vars *vars)
 	vars->draw_end = vars->line_height / 2 + HEIGHT / 2;
 	if (vars->draw_end >= HEIGHT)
 		vars->draw_end = HEIGHT - 1;
-	color = rgb(255, 0, 0);
-	if (vars->side == 1)
-		color = rgb(120, 0, 0);
-	draw_line(vector(x, vars->draw_start), vector(x, vars->draw_end), color);
+	if (vars->side == 0)
+		vars->wall_x = player.y + vars->perp_wall_dist * vars->ray_dir_y;
+	else
+		vars->wall_x = player.x + vars->perp_wall_dist * vars->ray_dir_x;
+	vars->wall_x -= floor(vars->wall_x);
+	vars->tex_x = (int)(vars->wall_x * 64.0);
+	if (vars->side == 0 && vars->ray_dir_x > 0)
+		vars->tex_x = 64 - vars->tex_x - 1;
+	else if (vars->side == 1 && vars->ray_dir_y < 0)
+		vars->tex_x = 64 - vars->tex_x - 1;
+	vars->step = 64.0 / vars->line_height;
+	vars->tex_pos = (vars->draw_start - 100 - HEIGHT / 2 + vars->line_height
+			/ 2) * vars->step;
+	draw_texture(win.east_pixels, x, vars);
 }
 
 void	raycaster(t_vars *vars)

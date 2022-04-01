@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:38:38 by aabajyan          #+#    #+#             */
-/*   Updated: 2022/03/31 20:14:42 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/01 14:07:06 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 int	on_close(void)
 {
 	mlx_destroy_window(win.mlx, win.win);
+	if (map.fd_ea)
+		free(map.fd_ea);
+	if (map.fd_no)
+		free(map.fd_no);
+	if (map.fd_so)
+		free(map.fd_so);
+	if (map.fd_we)
+		free(map.fd_we);
 	exit(0);
 	return (0);
 }

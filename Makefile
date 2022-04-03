@@ -6,7 +6,7 @@
 #    By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/22 15:20:34 by shovsepy          #+#    #+#              #
-#    Updated: 2022/04/01 17:33:31 by shovsepy         ###   ########.fr        #
+#    Updated: 2022/04/03 11:35:37 by shovsepy         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,6 @@ fclean: clean
 re: fclean all
 
 norm:
-	@norminette $(SRCS)
+	norminette $(SRCS)
 
 .PHONY: clean re fclean all norm

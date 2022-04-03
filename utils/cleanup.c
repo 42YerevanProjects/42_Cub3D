@@ -19,7 +19,7 @@ void	destroy_map(void)
 	y = 0;
 	while (y < map.height)
 		free(map.map[y++]);
-	free (map.map);
+	free(map.map);
 }
 
 void	cleanup(void)

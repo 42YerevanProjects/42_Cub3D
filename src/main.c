@@ -49,5 +49,6 @@ int	main(int argc, char **argv)
 	mlx_hook(win.win, E_KEY_PRESS, M_KEY_PRESS, on_key_press, NULL);
 	mlx_hook(win.win, E_KEY_RELEASE, M_KEY_RELEASE, on_key_release, NULL);
 	mlx_loop(win.mlx);
+	cleanup();
 	return (0);
 }

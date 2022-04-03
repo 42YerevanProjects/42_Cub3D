@@ -271,6 +271,7 @@ int					my_rgb(int r, int g, int b);
 void				check_zero(char *line);
 void				check_validity(char c);
 void				check_neighbours(int i, int j);
+void				cleanup(void);
 
 /* PARSING */
 void				parse(char *file);
@@ -283,7 +284,6 @@ void				parse_cell(int i, int j);
 int					parse_map(void);
 
 /* EVENTS */
-void				cleanup(void);
 int					on_close(void);
 int					on_key_press(int keycode);
 int					on_key_release(int keycode);

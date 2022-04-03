@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:29:51 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/04/01 20:20:49 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/03 09:57:03 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,6 +283,7 @@ void				parse_cell(int i, int j);
 int					parse_map(void);
 
 /* EVENTS */
+void				cleanup(void);
 int					on_close(void);
 int					on_key_press(int keycode);
 int					on_key_release(int keycode);

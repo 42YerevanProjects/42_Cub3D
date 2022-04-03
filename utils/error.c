@@ -6,7 +6,7 @@
 /*   By: aabajyan <aabajyan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 07:32:52 by shovsepy          #+#    #+#             */
-/*   Updated: 2022/03/31 17:08:49 by aabajyan         ###   ########.fr       */
+/*   Updated: 2022/04/03 09:56:46 by aabajyan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_exit(int code)
 {
+	cleanup();
 	if (code == 1)
 		printf("Error: Invalid number of arguments!\n");
 	else if (code == 2)

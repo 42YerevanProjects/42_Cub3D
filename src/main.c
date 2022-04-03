@@ -43,7 +43,6 @@ int	main(int argc, char **argv)
 	win.data.img = mlx_new_image(win.mlx, win.width, win.height);
 	win.data.addr = mlx_get_data_addr(
 			win.data.img, &win.data.bpp, &win.data.length, &win.data.endian);
-	player.move = 0;
 	load_textures();
 	mlx_loop_hook(win.mlx, on_loop, &vars);
 	mlx_hook(win.win, E_DESTROY_NOTIFY, 0, on_close, NULL);

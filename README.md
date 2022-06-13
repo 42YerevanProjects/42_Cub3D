@@ -1,4 +1,4 @@
-### Cub3D
+### 42 Cub3D
 
 > ⚠️ **Warning**: Don't copy/paste code you don't understand: it's bad for you, and for the school.
 
